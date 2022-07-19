@@ -148,11 +148,19 @@ public class TennisTU {
     @DisplayName("Quand un jeu est gagné, alors les deux joueurs retournent à 0 point.")
     public void reinitJeuAfterGetPoint() {
 
-        this.laPartie.getJoueurB().setScore("1");
+//        this.laPartie.getJoueurB().setScore("1");
+//
+//        this.laPartie.getJoueurA().setScore("0");
+//        this.laPartie.getJoueurB().setScore("0");
+//
+//        assertEquals("0", this.laPartie.getJoueurB().getScore());
+        this.laPartie.getJoueurA().setScore("40");
+        this.laPartie.getJoueurB().setScore("40");
+        this.laPartie.getJoueurA().setAvantage(true);
 
-        this.laPartie.getJoueurA().setScore("0");
-        this.laPartie.getJoueurB().setScore("0");
+        this.laPartie.GagnePoint(this.laPartie.getJoueurA());
 
+        assertEquals("0", this.laPartie.getJoueurA().getScore());
         assertEquals("0", this.laPartie.getJoueurB().getScore());
     }
 

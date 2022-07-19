@@ -53,6 +53,8 @@ public class Partie {
                 joueurPerdant.setAvantage(false);
             }
             else if (joueurGagnant.isAvantage() == true) {
+                joueurGagnant.setScore("0");
+                joueurPerdant.setScore("0");
                 joueurGagnant.setNombreSet(joueurGagnant.getNombreSet()+1);
             }
         }
