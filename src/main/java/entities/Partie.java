@@ -26,5 +26,15 @@ public class Partie {
         return this.joueurB;
     }
 
-
+    public void GagnePoint(Joueur joueurGagnant) {
+        if (joueurGagnant.getScore().equals("0")) {
+            joueurGagnant.setScore("15");
+        }
+        else if (joueurGagnant.getScore().equals("15")) {
+            joueurGagnant.setScore("30");
+        }
+        else if (joueurGagnant.getScore().equals("30")) {
+            joueurGagnant.setScore("40");
+        }
+    }
 }
