@@ -49,6 +49,12 @@ public class Partie {
             if(joueurGagnant.isAvantage() == false && joueurPerdant.isAvantage() == false) {
                 joueurGagnant.setAvantage(true);
             }
+            else if (joueurPerdant.isAvantage() == true) {
+                joueurPerdant.setAvantage(false);
+            }
+            else if (joueurGagnant.isAvantage() == true) {
+                joueurGagnant.setNombreSet(joueurGagnant.getNombreSet()+1);
+            }
         }
     }
 }

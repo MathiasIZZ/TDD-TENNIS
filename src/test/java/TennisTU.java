@@ -109,25 +109,39 @@ public class TennisTU {
     @DisplayName("Si les deux joueurs sont a egalité a 40 points, si le perdant a un avantage, alors il le perd.")
     public void lostAvantageAfterEquality() {
 
+//        this.laPartie.getJoueurA().setScore("40");
+//
+//        this.laPartie.getJoueurB().setScore("40");
+//        this.laPartie.getJoueurB().setScore("ADV");
+//        this.laPartie.getJoueurB().setScore("40");
+//
+//        assertEquals("40", this.laPartie.getJoueurB().getScore());
         this.laPartie.getJoueurA().setScore("40");
-
         this.laPartie.getJoueurB().setScore("40");
-        this.laPartie.getJoueurB().setScore("ADV");
-        this.laPartie.getJoueurB().setScore("40");
+        this.laPartie.getJoueurB().setAvantage(true);
 
-        assertEquals("40", this.laPartie.getJoueurB().getScore());
+        this.laPartie.GagnePoint(this.laPartie.getJoueurA());
+
+        assertEquals(false, this.laPartie.getJoueurB().isAvantage());
     }
 
     @Test
     @DisplayName("Si les deux joueurs sont a egalité a 40 points, si le gagnant a un avantage, alors il gagne le jeu.")
     public void getPointAfterADV() {
 
+//        this.laPartie.getJoueurA().setScore("40");
+//
+//        this.laPartie.getJoueurB().setScore("ADV");
+//        this.laPartie.getJoueurB().setScore("1");
+//
+//        assertEquals("1", this.laPartie.getJoueurB().getScore());
         this.laPartie.getJoueurA().setScore("40");
+        this.laPartie.getJoueurB().setScore("40");
+        this.laPartie.getJoueurA().setAvantage(true);
 
-        this.laPartie.getJoueurB().setScore("ADV");
-        this.laPartie.getJoueurB().setScore("1");
+        this.laPartie.GagnePoint(this.laPartie.getJoueurA());
 
-        assertEquals("1", this.laPartie.getJoueurB().getScore());
+        assertEquals(1, this.laPartie.getJoueurA().getNombreSet());
     }
 
     @Test
