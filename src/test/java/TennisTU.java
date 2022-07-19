@@ -72,8 +72,54 @@ public class TennisTU {
     }
 
 
+    @Test
+    @DisplayName("Si les deux joueurs sont a egalité a 40 points, si aucun joueur a un avantage, le joueur qui gagne le point gagne un avantage.")
+    public void avantageAfterEquality() {
 
+        this.laPartie.getJoueurA().setScore("40");
+        this.laPartie.getJoueurB().setScore("40");
 
+        this.laPartie.getJoueurB().setScore("ADV");
+
+        assertEquals("ADV", this.laPartie.getJoueurB().getScore());
+    }
+
+    @Test
+    @DisplayName("Si les deux joueurs sont a egalité a 40 points, si le perdant a un avantage, alors il le perd.")
+    public void lostAvantageAfterEquality() {
+
+        this.laPartie.getJoueurA().setScore("40");
+
+        this.laPartie.getJoueurB().setScore("40");
+        this.laPartie.getJoueurB().setScore("ADV");
+        this.laPartie.getJoueurB().setScore("40");
+
+        assertEquals("40", this.laPartie.getJoueurB().getScore());
+    }
+
+    @Test
+    @DisplayName("Si les deux joueurs sont a egalité a 40 points, si le gagnant a un avantage, alors il gagne le jeu.")
+    public void getPointAfterADV() {
+
+        this.laPartie.getJoueurA().setScore("40");
+
+        this.laPartie.getJoueurB().setScore("ADV");
+        this.laPartie.getJoueurB().setScore("1");
+
+        assertEquals("1", this.laPartie.getJoueurB().getScore());
+    }
+
+    @Test
+    @DisplayName("Quand un jeu est gagné, alors les deux joueurs retournent à 0 point.")
+    public void reinitJeuAfterGetPoint() {
+
+        this.laPartie.getJoueurB().setScore("1");
+
+        this.laPartie.getJoueurA().setScore("0");
+        this.laPartie.getJoueurB().setScore("0");
+
+        assertEquals("0", this.laPartie.getJoueurB().getScore());
+    }
 
 
 
