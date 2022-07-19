@@ -91,12 +91,18 @@ public class TennisTU {
     @DisplayName("Si les deux joueurs sont a egalité a 40 points, si aucun joueur a un avantage, le joueur qui gagne le point gagne un avantage.")
     public void avantageAfterEquality() {
 
+//        this.laPartie.getJoueurA().setScore("40");
+//        this.laPartie.getJoueurB().setScore("40");
+//
+//        this.laPartie.getJoueurB().setScore("ADV");
+//
+//        assertEquals("ADV", this.laPartie.getJoueurB().getScore());
         this.laPartie.getJoueurA().setScore("40");
         this.laPartie.getJoueurB().setScore("40");
 
-        this.laPartie.getJoueurB().setScore("ADV");
+        this.laPartie.GagnePoint(this.laPartie.getJoueurA());
 
-        assertEquals("ADV", this.laPartie.getJoueurB().getScore());
+        assertEquals(true, this.laPartie.getJoueurA().isAvantage());
     }
 
     @Test

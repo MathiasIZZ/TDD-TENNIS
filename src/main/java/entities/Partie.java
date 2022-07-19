@@ -36,5 +36,19 @@ public class Partie {
         else if (joueurGagnant.getScore().equals("30")) {
             joueurGagnant.setScore("40");
         }
+        else {
+            Joueur joueurPerdant;
+            if(joueurGagnant.equals(joueurA))
+            {
+                joueurPerdant = joueurB;
+            }
+            else
+            {
+                joueurPerdant = joueurA;
+            }
+            if(joueurGagnant.isAvantage() == false && joueurPerdant.isAvantage() == false) {
+                joueurGagnant.setAvantage(true);
+            }
+        }
     }
 }

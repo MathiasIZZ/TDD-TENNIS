@@ -5,9 +5,15 @@ public class Joueur {
     private String name;
     private String score;
 
+    private boolean avantage;
+
+    private int nombreSet;
+
     public Joueur(String name) {
         this.name = name;
         this.score = "0";
+        this.avantage = false;
+        this.nombreSet = 0;
     }
 
     public String getScore() {
@@ -24,5 +30,21 @@ public class Joueur {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public boolean isAvantage() {
+        return avantage;
+    }
+
+    public void setAvantage(boolean avantage) {
+        this.avantage = avantage;
+    }
+
+    public int getNombreSet() {
+        return nombreSet;
+    }
+
+    public void setNombreSet(int nombreSet) {
+        this.nombreSet = nombreSet;
     }
 }
