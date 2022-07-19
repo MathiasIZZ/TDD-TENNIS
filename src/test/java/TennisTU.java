@@ -40,7 +40,7 @@ public class TennisTU {
     }
 
     @Test
-    @DisplayName("Quand un joueur gagne un point, il passe de 0 à 15. Puis de 15 à 30. Puis de 30 à 40.")
+    @DisplayName("Quand un joueur gagne un point, il passe de 0 à 15.")
     public void partie15Points() {
 
         this.laPartie.getJoueurA().setScore("0");
@@ -48,6 +48,32 @@ public class TennisTU {
 
         assertEquals("15", this.laPartie.getJoueurB().getScore());
     }
+
+    @Test
+    @DisplayName("Quand un joueur gagne un point, il passe de 15 à 30.")
+    public void partie30Points() {
+
+        this.laPartie.getJoueurA().setScore("15");
+        this.laPartie.getJoueurB().setScore("15");
+        this.laPartie.getJoueurB().setScore("30");
+
+        assertEquals("30", this.laPartie.getJoueurB().getScore());
+    }
+
+    @Test
+    @DisplayName("Quand un joueur gagne un point, il passe de 30 à 40.")
+    public void partie40Points() {
+
+        this.laPartie.getJoueurA().setScore("30");
+        this.laPartie.getJoueurB().setScore("30");
+        this.laPartie.getJoueurB().setScore("40");
+
+        assertEquals("40", this.laPartie.getJoueurB().getScore());
+    }
+
+
+
+
 
 
 
