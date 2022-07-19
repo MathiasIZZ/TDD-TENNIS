@@ -35,8 +35,8 @@ public class TennisTU {
 //        this.laPartie.getJoueurA().setScore("0");
 //        this.laPartie.getJoueurB().setScore("0");
 
-        assertEquals("0", this.laPartie.getJoueurA().getScore());
-        assertEquals("0", this.laPartie.getJoueurB().getScore());
+        assertEquals(0, this.laPartie.getJoueurA().getScore());
+        assertEquals(0, this.laPartie.getJoueurB().getScore());
     }
 
     @Test
@@ -48,10 +48,10 @@ public class TennisTU {
 //
 //        assertEquals("15", this.laPartie.getJoueurB().getScore());
 
-        this.laPartie.getJoueurA().setScore("0");
+        this.laPartie.getJoueurA().setScore(0);
         this.laPartie.GagnePoint(this.laPartie.getJoueurA());
 
-        assertEquals("15", this.laPartie.getJoueurA().getScore());
+        assertEquals(15, this.laPartie.getJoueurA().getScore());
     }
 
     @Test
@@ -64,10 +64,10 @@ public class TennisTU {
 //
 //        assertEquals("30", this.laPartie.getJoueurB().getScore());
 
-        this.laPartie.getJoueurA().setScore("15");
+        this.laPartie.getJoueurA().setScore(15);
         this.laPartie.GagnePoint(this.laPartie.getJoueurA());
 
-        assertEquals("30", this.laPartie.getJoueurA().getScore());
+        assertEquals(30, this.laPartie.getJoueurA().getScore());
     }
 
     @Test
@@ -80,10 +80,10 @@ public class TennisTU {
 //
 //        assertEquals("40", this.laPartie.getJoueurB().getScore());
 
-        this.laPartie.getJoueurA().setScore("30");
+        this.laPartie.getJoueurA().setScore(30);
         this.laPartie.GagnePoint(this.laPartie.getJoueurA());
 
-        assertEquals("40", this.laPartie.getJoueurA().getScore());
+        assertEquals(40, this.laPartie.getJoueurA().getScore());
     }
 
 
@@ -97,8 +97,8 @@ public class TennisTU {
 //        this.laPartie.getJoueurB().setScore("ADV");
 //
 //        assertEquals("ADV", this.laPartie.getJoueurB().getScore());
-        this.laPartie.getJoueurA().setScore("40");
-        this.laPartie.getJoueurB().setScore("40");
+        this.laPartie.getJoueurA().setScore(40);
+        this.laPartie.getJoueurB().setScore(40);
 
         this.laPartie.GagnePoint(this.laPartie.getJoueurA());
 
@@ -116,8 +116,8 @@ public class TennisTU {
 //        this.laPartie.getJoueurB().setScore("40");
 //
 //        assertEquals("40", this.laPartie.getJoueurB().getScore());
-        this.laPartie.getJoueurA().setScore("40");
-        this.laPartie.getJoueurB().setScore("40");
+        this.laPartie.getJoueurA().setScore(40);
+        this.laPartie.getJoueurB().setScore(40);
         this.laPartie.getJoueurB().setAvantage(true);
 
         this.laPartie.GagnePoint(this.laPartie.getJoueurA());
@@ -135,8 +135,8 @@ public class TennisTU {
 //        this.laPartie.getJoueurB().setScore("1");
 //
 //        assertEquals("1", this.laPartie.getJoueurB().getScore());
-        this.laPartie.getJoueurA().setScore("40");
-        this.laPartie.getJoueurB().setScore("40");
+        this.laPartie.getJoueurA().setScore(40);
+        this.laPartie.getJoueurB().setScore(40);
         this.laPartie.getJoueurA().setAvantage(true);
 
         this.laPartie.GagnePoint(this.laPartie.getJoueurA());
@@ -154,14 +154,14 @@ public class TennisTU {
 //        this.laPartie.getJoueurB().setScore("0");
 //
 //        assertEquals("0", this.laPartie.getJoueurB().getScore());
-        this.laPartie.getJoueurA().setScore("40");
-        this.laPartie.getJoueurB().setScore("40");
+        this.laPartie.getJoueurA().setScore(40);
+        this.laPartie.getJoueurB().setScore(40);
         this.laPartie.getJoueurA().setAvantage(true);
 
         this.laPartie.GagnePoint(this.laPartie.getJoueurA());
 
-        assertEquals("0", this.laPartie.getJoueurA().getScore());
-        assertEquals("0", this.laPartie.getJoueurB().getScore());
+        assertEquals(0, this.laPartie.getJoueurA().getScore());
+        assertEquals(0, this.laPartie.getJoueurB().getScore());
     }
 
 

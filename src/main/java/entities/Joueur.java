@@ -3,7 +3,7 @@ package entities;
 public class Joueur {
 
     private String name;
-    private String score;
+    private int score;
 
     private boolean avantage;
 
@@ -11,16 +11,16 @@ public class Joueur {
 
     public Joueur(String name) {
         this.name = name;
-        this.score = "0";
+        this.score = 0;
         this.avantage = false;
         this.nombreSet = 0;
     }
 
-    public String getScore() {
+    public int getScore() {
         return this.score;
     }
 
-    public void setScore(String score) {
+    public void setScore(int score) {
         this.score = score;
     }
 
