@@ -39,6 +39,18 @@ public class TennisTU {
         assertEquals("0", this.laPartie.getJoueurB().getScore());
     }
 
+    @Test
+    @DisplayName("Quand un joueur gagne un point, il passe de 0 à 15. Puis de 15 à 30. Puis de 30 à 40.")
+    public void partie15Points() {
+
+        this.laPartie.getJoueurA().setScore("0");
+        this.laPartie.getJoueurB().setScore("15");
+
+        assertEquals("15", this.laPartie.getJoueurB().getScore());
+    }
+
+
+
 
 
 
