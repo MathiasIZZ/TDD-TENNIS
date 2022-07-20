@@ -8,6 +8,8 @@ public class Joueur {
     private int nombreJeu;
     private int nombreSet;
 
+    private boolean jeuDecisif;
+
 
 
     public Joueur(String name) {
@@ -15,6 +17,8 @@ public class Joueur {
         this.score = 0;
         this.avantage = false;
         this.nombreSet = 0;
+        this.nombreJeu = 0;
+        this.jeuDecisif = false;
     }
 
     public int getNombreJeu() {
@@ -55,5 +59,13 @@ public class Joueur {
 
     public void setNombreSet(int nombreSet) {
         this.nombreSet = nombreSet;
+    }
+
+    public boolean isJeuDecisif() {
+        return jeuDecisif;
+    }
+
+    public void setJeuDecisif(boolean jeuDecisif) {
+        this.jeuDecisif = jeuDecisif;
     }
 }

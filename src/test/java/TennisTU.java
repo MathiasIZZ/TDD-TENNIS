@@ -186,8 +186,52 @@ public class TennisTU {
         assertEquals(1, this.laPartie.getJoueurA().getNombreSet());
     }
 
+    @Test
+    @DisplayName("Quand les deux joueurs ont 5 points alors faut avoir 2 points d'avance et 7 jeux pour gagner le set.")
+    public void winSet5JeuxTwoPlayersAnd2PointsAdvance() {
+//        this.laPartie.getJoueurA().setNombreJeu(7);
+//        this.laPartie.getJoueurB().setNombreJeu(5);
+//
+//        this.laPartie.getJoueurA().setNombreSet(1);
+//
+//        assertEquals(1, this.laPartie.getJoueurA().getNombreSet());
 
+        this.laPartie.getJoueurA().setNombreJeu(6);
+        this.laPartie.getJoueurB().setNombreJeu(5);
 
+        this.laPartie.getJoueurA().setScore(40);
+        this.laPartie.getJoueurB().setScore(40);
+        this.laPartie.getJoueurA().setAvantage(true);
+
+        this.laPartie.gagnePoint(this.laPartie.getJoueurA());
+
+        assertEquals(1, this.laPartie.getJoueurA().getNombreSet());
+    }
+
+    @Test
+    @DisplayName("Quand les deux joueurs ont 6 jeux gagné, alors on passe en jeux decisif.")
+    public void twoPlayersJeuxDecisif() {
+//        this.laPartie.getJoueurA().setNombreJeu(6);
+//        this.laPartie.getJoueurB().setNombreJeu(6);
+//
+//        this.laPartie.getJoueurA().setJeuDecisif(true);
+//        this.laPartie.getJoueurB().setJeuDecisif(true);
+//
+//        assertEquals(true, this.laPartie.getJoueurA().isJeuDecisif());
+//        assertEquals(true, this.laPartie.getJoueurB().isJeuDecisif());
+
+        this.laPartie.getJoueurA().setNombreJeu(5);
+        this.laPartie.getJoueurB().setNombreJeu(6);
+
+        this.laPartie.getJoueurA().setScore(40);
+        this.laPartie.getJoueurB().setScore(40);
+        this.laPartie.getJoueurA().setAvantage(true);
+
+        this.laPartie.gagnePoint(this.laPartie.getJoueurA());
+
+        assertEquals(true, this.laPartie.getJoueurA().isJeuDecisif());
+        assertEquals(true, this.laPartie.getJoueurB().isJeuDecisif());
+    }
 
 
 
