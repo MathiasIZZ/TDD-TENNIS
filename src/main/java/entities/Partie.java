@@ -26,7 +26,7 @@ public class Partie {
         return this.joueurB;
     }
 
-    public void GagnePoint(Joueur joueurGagnant) {
+    public void gagnePoint(Joueur joueurGagnant) {
         if (joueurGagnant.getScore() == 0) {
             joueurGagnant.setScore(15);
         }
@@ -38,24 +38,25 @@ public class Partie {
         }
         else {
             Joueur joueurPerdant;
-            if(joueurGagnant.equals(joueurA))
-            {
+            if (joueurGagnant.equals(joueurA)) {
                 joueurPerdant = joueurB;
-            }
-            else
-            {
+            } else {
                 joueurPerdant = joueurA;
             }
-            if(joueurGagnant.isAvantage() == false && joueurPerdant.isAvantage() == false) {
+            if (!joueurGagnant.isAvantage() && !joueurPerdant.isAvantage()) {
                 joueurGagnant.setAvantage(true);
-            }
-            else if (joueurPerdant.isAvantage() == true) {
+            } else if (joueurPerdant.isAvantage()) {
                 joueurPerdant.setAvantage(false);
-            }
-            else if (joueurGagnant.isAvantage() == true) {
+            } else if (joueurGagnant.isAvantage()) {
                 joueurGagnant.setScore(0);
                 joueurPerdant.setScore(0);
-                joueurGagnant.setNombreSet(joueurGagnant.getNombreSet()+1);
+                joueurGagnant.setNombreJeu(joueurGagnant.getNombreJeu() + 1);
+
+                if (joueurGagnant.getNombreJeu() == 6 && joueurPerdant.getNombreJeu() <= 4) {
+                    joueurGagnant.setNombreSet(joueurGagnant.getNombreSet() + 1);
+                }
+
+
             }
         }
     }

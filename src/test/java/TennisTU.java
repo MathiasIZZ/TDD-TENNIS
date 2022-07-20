@@ -49,7 +49,7 @@ public class TennisTU {
 //        assertEquals("15", this.laPartie.getJoueurB().getScore());
 
         this.laPartie.getJoueurA().setScore(0);
-        this.laPartie.GagnePoint(this.laPartie.getJoueurA());
+        this.laPartie.gagnePoint(this.laPartie.getJoueurA());
 
         assertEquals(15, this.laPartie.getJoueurA().getScore());
     }
@@ -65,7 +65,7 @@ public class TennisTU {
 //        assertEquals("30", this.laPartie.getJoueurB().getScore());
 
         this.laPartie.getJoueurA().setScore(15);
-        this.laPartie.GagnePoint(this.laPartie.getJoueurA());
+        this.laPartie.gagnePoint(this.laPartie.getJoueurA());
 
         assertEquals(30, this.laPartie.getJoueurA().getScore());
     }
@@ -81,7 +81,7 @@ public class TennisTU {
 //        assertEquals("40", this.laPartie.getJoueurB().getScore());
 
         this.laPartie.getJoueurA().setScore(30);
-        this.laPartie.GagnePoint(this.laPartie.getJoueurA());
+        this.laPartie.gagnePoint(this.laPartie.getJoueurA());
 
         assertEquals(40, this.laPartie.getJoueurA().getScore());
     }
@@ -100,7 +100,7 @@ public class TennisTU {
         this.laPartie.getJoueurA().setScore(40);
         this.laPartie.getJoueurB().setScore(40);
 
-        this.laPartie.GagnePoint(this.laPartie.getJoueurA());
+        this.laPartie.gagnePoint(this.laPartie.getJoueurA());
 
         assertEquals(true, this.laPartie.getJoueurA().isAvantage());
     }
@@ -120,7 +120,7 @@ public class TennisTU {
         this.laPartie.getJoueurB().setScore(40);
         this.laPartie.getJoueurB().setAvantage(true);
 
-        this.laPartie.GagnePoint(this.laPartie.getJoueurA());
+        this.laPartie.gagnePoint(this.laPartie.getJoueurA());
 
         assertEquals(false, this.laPartie.getJoueurB().isAvantage());
     }
@@ -139,7 +139,7 @@ public class TennisTU {
         this.laPartie.getJoueurB().setScore(40);
         this.laPartie.getJoueurA().setAvantage(true);
 
-        this.laPartie.GagnePoint(this.laPartie.getJoueurA());
+        this.laPartie.gagnePoint(this.laPartie.getJoueurA());
 
         assertEquals(1, this.laPartie.getJoueurA().getNombreSet());
     }
@@ -158,11 +158,38 @@ public class TennisTU {
         this.laPartie.getJoueurB().setScore(40);
         this.laPartie.getJoueurA().setAvantage(true);
 
-        this.laPartie.GagnePoint(this.laPartie.getJoueurA());
+        this.laPartie.gagnePoint(this.laPartie.getJoueurA());
 
         assertEquals(0, this.laPartie.getJoueurA().getScore());
         assertEquals(0, this.laPartie.getJoueurB().getScore());
     }
+
+    @Test
+    @DisplayName("Quand un joueur arrive à gagner 6 jeux et que son adversaire 4 ou moins jeux gagnés, alors le joueur gagne un set.")
+    public void winSetAfter6Jeux() {
+
+//        this.laPartie.getJoueurA().setNombreJeu(6);
+//        this.laPartie.getJoueurB().setNombreJeu(4);
+//        this.laPartie.getJoueurA().setNombreSet(1);
+
+//        assertEquals(1, this.laPartie.getJoueurA().getNombreSet());
+
+        this.laPartie.getJoueurA().setNombreJeu(5);
+        this.laPartie.getJoueurB().setNombreJeu(4);
+
+        this.laPartie.getJoueurA().setScore(40);
+        this.laPartie.getJoueurB().setScore(40);
+        this.laPartie.getJoueurA().setAvantage(true);
+
+        this.laPartie.gagnePoint(this.laPartie.getJoueurA());
+
+        assertEquals(1, this.laPartie.getJoueurA().getNombreSet());
+    }
+
+
+
+
+
 
 
 
