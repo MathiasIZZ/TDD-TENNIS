@@ -3,8 +3,7 @@ import entities.Partie;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertInstanceOf;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TennisTU {
 
@@ -303,9 +302,34 @@ public class TennisTU {
         assertEquals(1, this.laPartie.getJoueurA().getNombreSet());
     }
 
+    @Test
+    @DisplayName("Le premier joueur a 2 sets gagnés gagne la partie.")
+    public void winAfterTwoSet() {
+
+//        this.laPartie.getJoueurA().setNombreSet(2);
+//        this.laPartie.getJoueurA().setWin(true);
+//
+//        assertTrue(this.laPartie.getJoueurA().isWin());
+
+        this.laPartie.getJoueurA().setJeuDecisif(true);
+        this.laPartie.getJoueurB().setJeuDecisif(true);
+
+        this.laPartie.getJoueurA().setNombreSet(0);
+        this.laPartie.getJoueurB().setNombreSet(0);
+
+        this.laPartie.getJoueurA().setScore(6);
+        this.laPartie.getJoueurB().setScore(4);
+
+        this.laPartie.getJoueurA().setNombreSet(1);
+
+        this.laPartie.gagnePoint(this.laPartie.getJoueurA());
 
 
+        assertTrue(this.laPartie.getJoueurA().isWin());
+    }
 
+
+    
 
 
 

@@ -5,10 +5,13 @@ public class Partie {
     private Joueur joueurA;
     private Joueur joueurB;
 
+
     public Partie(Joueur joueurA, Joueur joueurB) {
         this.joueurA = joueurA;
         this.joueurB = joueurB;
     }
+
+
 
     public void setJoueurA(Joueur joueurA) {
         this.joueurA = joueurA;
@@ -54,9 +57,16 @@ public class Partie {
 
                 if (joueurGagnant.getNombreJeu() == 6 && joueurPerdant.getNombreJeu() <= 4) {
                     joueurGagnant.setNombreSet(joueurGagnant.getNombreSet() + 1);
+                    if(joueurGagnant.getNombreSet() == 2) {
+                        joueurGagnant.setWin(true);
+                    }
                 }
                 else if (joueurGagnant.getNombreJeu() == 7 && joueurPerdant.getNombreJeu() == 5) {
+
                     joueurGagnant.setNombreSet(joueurGagnant.getNombreSet() + 1);
+                    if(joueurGagnant.getNombreSet() == 2) {
+                        joueurGagnant.setWin(true);
+                    }
                 }
                 else if (joueurGagnant.getNombreJeu() == joueurPerdant.getNombreJeu()) {
                     joueurGagnant.setJeuDecisif(true);
@@ -65,9 +75,17 @@ public class Partie {
             }
             if(joueurGagnant.isJeuDecisif() && joueurPerdant.isJeuDecisif()) {
                 if (joueurGagnant.getScore() < 7) {
+
                     joueurGagnant.setScore(joueurGagnant.getScore() + 1);
+
                     if ((joueurGagnant.getScore() - joueurPerdant.getScore()) > 2) {
+
                         joueurGagnant.setNombreSet(joueurGagnant.getNombreSet() + 1);
+
+                        if(joueurGagnant.getNombreSet() == 2) {
+
+                            joueurGagnant.setWin(true);
+                        }
                     }
                 }
             }

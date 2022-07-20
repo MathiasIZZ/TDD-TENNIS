@@ -9,6 +9,7 @@ public class Joueur {
     private int nombreSet;
 
     private boolean jeuDecisif;
+    private boolean isWin;
 
 
 
@@ -19,6 +20,15 @@ public class Joueur {
         this.nombreSet = 0;
         this.nombreJeu = 0;
         this.jeuDecisif = false;
+        this.isWin = false;
+    }
+
+    public boolean isWin() {
+        return isWin;
+    }
+
+    public void setWin(boolean win) {
+        isWin = win;
     }
 
     public int getNombreJeu() {
