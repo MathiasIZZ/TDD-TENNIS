@@ -253,6 +253,40 @@ public class TennisTU {
         assertEquals(1, this.laPartie.getJoueurA().getScore());
     }
 
+    @Test
+    @DisplayName("Si un joueur gagne un point pendant un jeu decisif il passe de 0 à 1, puis 2, ... jusqu'à 7.")
+    public void incrementPointWhenJeuxDecisiflessThan7() {
+//        this.laPartie.getJoueurA().setJeuDecisif(true);
+//        this.laPartie.getJoueurB().setJeuDecisif(true);
+//
+//        this.laPartie.getJoueurA().setScore(1);
+//        this.laPartie.getJoueurA().setScore(2);
+//
+//        assertEquals(2, this.laPartie.getJoueurA().getScore());
+
+        this.laPartie.getJoueurA().setJeuDecisif(true);
+        this.laPartie.getJoueurB().setJeuDecisif(true);
+
+        this.laPartie.getJoueurA().setScore(6);
+
+        this.laPartie.gagnePoint(this.laPartie.getJoueurA());
+
+        assertEquals(7, this.laPartie.getJoueurA().getScore());
+    }
+
+    @Test
+    @DisplayName("Si un joueur gagne un point pendant un jeu decisif il passe de 0 à 1, puis 2, ... jusqu'à 7.")
+    public void incrementPointWhenJeuxDecisifScore7() {
+        this.laPartie.getJoueurA().setJeuDecisif(true);
+        this.laPartie.getJoueurB().setJeuDecisif(true);
+
+        this.laPartie.getJoueurA().setScore(7);
+
+        this.laPartie.gagnePoint(this.laPartie.getJoueurA());
+
+        assertEquals(7, this.laPartie.getJoueurA().getScore());
+    }
+
 
 
 
