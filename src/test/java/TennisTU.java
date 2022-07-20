@@ -233,7 +233,25 @@ public class TennisTU {
         assertEquals(true, this.laPartie.getJoueurB().isJeuDecisif());
     }
 
+    @Test
+    @DisplayName("Quand il y a jeu décisif les points sont compté par point.")
+    public void countByPointWhenJeuxDecisif() {
+//        this.laPartie.getJoueurA().setJeuDecisif(true);
+//        this.laPartie.getJoueurB().setJeuDecisif(true);
+//
+//        this.laPartie.getJoueurA().setScore(1);
+//        this.laPartie.getJoueurB().setScore(2);
+//
+//        assertEquals(1, this.laPartie.getJoueurA().getScore());
+//        assertEquals(2, this.laPartie.getJoueurB().getScore());
 
+        this.laPartie.getJoueurA().setJeuDecisif(true);
+        this.laPartie.getJoueurB().setJeuDecisif(true);
+
+        this.laPartie.gagnePoint(this.laPartie.getJoueurA());
+
+        assertEquals(1, this.laPartie.getJoueurA().getScore());
+    }
 
 
 

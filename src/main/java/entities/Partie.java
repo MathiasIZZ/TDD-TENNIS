@@ -27,7 +27,7 @@ public class Partie {
     }
 
     public void gagnePoint(Joueur joueurGagnant) {
-        if (joueurGagnant.getScore() == 0) {
+        if (joueurGagnant.getScore() == 0 && !joueurGagnant.isJeuDecisif()) {
             joueurGagnant.setScore(15);
         }
         else if (joueurGagnant.getScore() == 15) {
@@ -60,9 +60,11 @@ public class Partie {
                 }
                 else if (joueurGagnant.getNombreJeu() == joueurPerdant.getNombreJeu()) {
                     joueurGagnant.setJeuDecisif(true);
-                    joueurPerdant.setJeuDecisif(true);
+                    joueurGagnant.setJeuDecisif(true);
                 }
-
+            }
+            if(joueurGagnant.isJeuDecisif() && joueurPerdant.isJeuDecisif()) {
+                joueurGagnant.setScore(joueurGagnant.getNombreSet() + 1);
             }
         }
     }
