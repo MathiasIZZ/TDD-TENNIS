@@ -29,7 +29,8 @@ public class Partie {
         return this.joueurB;
     }
 
-    public void gagnePoint(Joueur joueurGagnant) {
+    public String gagnePoint(Joueur joueurGagnant) {
+        String message = "";
         if(!joueurGagnant.isWin()) {
             if (joueurGagnant.getScore() == 0 && !joueurGagnant.isJeuDecisif()) {
                 joueurGagnant.setScore(15);
@@ -79,13 +80,22 @@ public class Partie {
                             joueurGagnant.setNombreSet(joueurGagnant.getNombreSet() + 1);
                             if(joueurGagnant.getNombreSet() == 2) {
                                 joueurGagnant.setWin(true);
+//                              message = "Joueur Gagnant: " + joueurGagnant.getName();
                             }
                         }
                     }
                 }
             }
+
         }
+        else {
+            message = "La partie est déja terminée";
+        }
+
+        return message;
     }
+
+
 }
 
 

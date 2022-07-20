@@ -328,8 +328,54 @@ public class TennisTU {
         assertTrue(this.laPartie.getJoueurA().isWin());
     }
 
+    @Test
+    @DisplayName("Quand un joueur a gagné, il n'est plus possible de changer les scores.")
+    public void whenWinNoChangeScore() {
+        this.laPartie.getJoueurA().setJeuDecisif(true);
+        this.laPartie.getJoueurB().setJeuDecisif(true);
 
-    
+        this.laPartie.getJoueurA().setNombreSet(0);
+        this.laPartie.getJoueurB().setNombreSet(0);
+
+        this.laPartie.getJoueurA().setScore(6);
+        this.laPartie.getJoueurB().setScore(4);
+
+        this.laPartie.getJoueurA().setNombreSet(1);
+
+        this.laPartie.gagnePoint(this.laPartie.getJoueurA());
+
+        this.laPartie.gagnePoint(this.laPartie.getJoueurA());
+
+
+        assertEquals("La partie est déja terminée", this.laPartie.gagnePoint(this.laPartie.getJoueurA()));
+    }
+
+    @Test
+    @DisplayName(" L'utilisateur doit être avertie que la partie est finie.")
+    public void userReceiveMessageAfterWin() {
+
+        this.laPartie.getJoueurA().setJeuDecisif(true);
+        this.laPartie.getJoueurB().setJeuDecisif(true);
+
+        this.laPartie.getJoueurA().setNombreSet(0);
+        this.laPartie.getJoueurB().setNombreSet(0);
+
+        this.laPartie.getJoueurA().setScore(6);
+        this.laPartie.getJoueurB().setScore(4);
+
+        this.laPartie.getJoueurA().setNombreSet(1);
+
+        this.laPartie.gagnePoint(this.laPartie.getJoueurA());
+
+
+        assertEquals("Joueur Gagnant: Mathias", "Joueur Gagnant: " + this.laPartie.getJoueurA().getName());
+
+    }
+
+
+
+
+
 
 
 
