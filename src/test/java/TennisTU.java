@@ -1,7 +1,8 @@
 import entities.Joueur;
 import entities.Partie;
-import org.junit.Test;
+
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -186,6 +187,32 @@ public class TennisTU {
     }
 
     @Test
+    @DisplayName("Quand les deux joueurs ont 5 jeux chacun, apres avoir reporté le 6 ieme jeux, le nombre de Set reste a zero")
+    public void continuingJeuxAfter5and5() {
+
+//        this.laPartie.getJoueurA().setNombreJeu(6);
+//        this.laPartie.getJoueurB().setNombreJeu(4);
+//        this.laPartie.getJoueurA().setNombreSet(1);
+
+//        assertEquals(1, this.laPartie.getJoueurA().getNombreSet());
+
+        this.laPartie.getJoueurA().setNombreJeu(5);
+        this.laPartie.getJoueurB().setNombreJeu(5);
+
+        this.laPartie.getJoueurA().setScore(40);
+        this.laPartie.getJoueurB().setScore(40);
+        this.laPartie.getJoueurA().setAvantage(true);
+
+        this.laPartie.gagnePoint(this.laPartie.getJoueurA());
+
+        assertEquals(0, this.laPartie.getJoueurA().getNombreSet());
+    }
+
+
+
+
+
+    @Test
     @DisplayName("Quand les deux joueurs ont 5 points alors faut avoir 2 points d'avance et 7 jeux pour gagner le set.")
     public void winSet5JeuxTwoPlayersAnd2PointsAdvance() {
 //        this.laPartie.getJoueurA().setNombreJeu(7);
@@ -351,7 +378,7 @@ public class TennisTU {
     }
 
     @Test
-    @DisplayName(" L'utilisateur doit être avertie que la partie est finie.")
+    @DisplayName("L'utilisateur doit être avertie que la partie est finie.")
     public void userReceiveMessageAfterWin() {
 
         this.laPartie.getJoueurA().setJeuDecisif(true);
