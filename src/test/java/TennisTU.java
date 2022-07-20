@@ -288,7 +288,20 @@ public class TennisTU {
     }
 
 
+    @Test
+    @DisplayName("Il faut avoir deux points d'avance pour gagner le jeu et donc le set.")
+    public void twoPointJeuForWinSet() {
 
+        this.laPartie.getJoueurA().setJeuDecisif(true);
+        this.laPartie.getJoueurB().setJeuDecisif(true);
+        this.laPartie.getJoueurA().setNombreSet(0);
+        this.laPartie.getJoueurB().setNombreSet(0);
+        this.laPartie.getJoueurA().setScore(6);
+        this.laPartie.getJoueurB().setScore(4);
+        this.laPartie.gagnePoint(this.laPartie.getJoueurA());
+
+        assertEquals(1, this.laPartie.getJoueurA().getNombreSet());
+    }
 
 
 

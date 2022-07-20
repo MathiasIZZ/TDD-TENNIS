@@ -66,8 +66,14 @@ public class Partie {
             if(joueurGagnant.isJeuDecisif() && joueurPerdant.isJeuDecisif()) {
                 if (joueurGagnant.getScore() < 7) {
                     joueurGagnant.setScore(joueurGagnant.getScore() + 1);
+                    if ((joueurGagnant.getScore() - joueurPerdant.getScore()) > 2) {
+                        joueurGagnant.setNombreSet(joueurGagnant.getNombreSet() + 1);
+                    }
                 }
             }
         }
     }
 }
+
+
+
