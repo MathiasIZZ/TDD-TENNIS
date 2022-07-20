@@ -80,7 +80,7 @@ public class Partie {
                             joueurGagnant.setNombreSet(joueurGagnant.getNombreSet() + 1);
                             if(joueurGagnant.getNombreSet() == 2) {
                                 joueurGagnant.setWin(true);
-//                              message = "Joueur Gagnant: " + joueurGagnant.getName();
+                              message = "Joueur Gagnant: " + joueurGagnant.getName();
                             }
                         }
                     }
