@@ -60,7 +60,7 @@ public class Partie {
                 }
                 else if (joueurGagnant.getNombreJeu() == joueurPerdant.getNombreJeu()) {
                     joueurGagnant.setJeuDecisif(true);
-                    joueurGagnant.setJeuDecisif(true);
+                    joueurPerdant.setJeuDecisif(true);
                 }
             }
             if(joueurGagnant.isJeuDecisif() && joueurPerdant.isJeuDecisif()) {

@@ -141,7 +141,7 @@ public class TennisTU {
 
         this.laPartie.gagnePoint(this.laPartie.getJoueurA());
 
-        assertEquals(1, this.laPartie.getJoueurA().getNombreSet());
+        assertEquals(1, this.laPartie.getJoueurA().getNombreJeu());
     }
 
     @Test
